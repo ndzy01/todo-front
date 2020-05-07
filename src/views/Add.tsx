@@ -11,22 +11,19 @@ const layout = {
 const tailLayout = {
   wrapperCol: { offset: 4, span: 18 },
 }
+const addFinish = (values: any) => {
+  apiP('/save', 'POST', {
+    content: values.content,
+  }).then((res) => {
+    message.success('Todo was successfully added')
+    history.push({ pathname: '/' })
+  })
+}
 
 export default function Add() {
   return (
     <div className="Add">
-      <Form
-        {...layout}
-        onFinish={(values) => {
-          console.log(values.content)
-          apiP('/save', 'POST', {
-            content: values.content,
-          }).then((res) => {
-            message.success('Todo was successfully added')
-            history.push({ pathname: '/' })
-          })
-        }}
-      >
+      <Form {...layout} onFinish={(values) => addFinish(values)}>
         <Form.Item
           label="Add todo"
           name="content"

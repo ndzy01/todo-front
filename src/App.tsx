@@ -11,7 +11,7 @@ import Finish from './views/Finish'
 
 message.config({
   top: 100,
-  duration: 2,
+  duration: 1,
   maxCount: 3,
   rtl: true,
 })

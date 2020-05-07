@@ -15,7 +15,7 @@ export default function Home() {
       page: page,
     }).then((res) => {
       setTodos(res.data.data)
-      setMaxPage(res.data.totalCount)
+      setMaxPage(parseInt(res.data.totalCount))
     })
   }, [page])
 
