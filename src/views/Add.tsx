@@ -29,7 +29,7 @@ export default function Add() {
           name="content"
           rules={[{ required: true, message: 'Please edit the content' }]}
         >
-          <Input />
+          <Input.TextArea  autoSize={{ minRows: 2, maxRows: 8}}  />
         </Form.Item>
         <Form.Item {...tailLayout}>
           <Button type="primary" htmlType="submit">
